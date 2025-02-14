@@ -1,0 +1,198 @@
+<div class="carousel-container">
+    <button class="nav-arrow left" onclick="prevSlide()">
+        <svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="invisible_box" data-name="invisible box">
+              <rect width="48" height="48" fill="none"/>
+            </g>
+            <g id="icons_Q2" data-name="icons Q2">
+              <path d="M29.6,13.4,18,25l11.6,11.6a1.9,1.9,0,0,1-.2,3,2.1,2.1,0,0,1-2.7-.2L14.8,26.4a1.9,1.9,0,0,1,0-2.8L26.7,10.6a2.1,2.1,0,0,1,2.7-.2,1.9,1.9,0,0,1,.2,3Z" fill="black"/>
+            </g>
+          </g>
+        </svg>
+    </button>
+    <div class="carousel">
+        <a class="carousel-item" href="https://soundcloud.com/cachapla_collective/soundofcachapla004">
+            <img src="https://cachapla.com/wp-content/uploads/2025/01/Screenshot-2025-01-26-152005.png" alt="Track 1">
+            <div class="carousel-text">
+                <h3>The Sound of CACHAPLA #004</h3>
+                <p>CACHAPLA</p>
+            </div>
+        </a>
+        <a class="carousel-item" href="https://soundcloud.com/cachapla_collective/the-sound-of-cachapla-003">
+            <img src="https://cachapla.com/wp-content/uploads/2025/01/Screenshot-2025-01-26-152053.png" alt="Track 2">
+            <div class="carousel-text">
+                <h3>The Sound of CACHAPLA #003</h3>
+                <p>CACHAPLA</p>
+            </div>
+        </a>
+        <a class="carousel-item" href="https://soundcloud.com/cachapla_collective/the-sound-of-cachapla-tomorrowland-mix">
+            <img src="https://cachapla.com/wp-content/uploads/2025/01/Screenshot-2025-01-26-152141.png" alt="Track 3">
+            <div class="carousel-text">
+                <h3>The Sound of CACHAPLA - TML Edition</h3>
+                <p>CACHAPLA</p>
+            </div>
+        </a>
+        <a class="carousel-item" href="https://soundcloud.com/cachapla_collective/guapa-original-mix">
+            <img src="https://cachapla.com/wp-content/uploads/2025/01/Guapa.png" alt="Track 3">
+            <div class="carousel-text">
+                <h3>ĀRYA & Heerō - Guapa</h3>
+                <p>CACHAPLA</p>
+            </div>
+        </a>
+        <a class="carousel-item" href="https://soundcloud.com/cachapla_collective/the-sound-of-cachapla-002">
+            <img src="https://cachapla.com/wp-content/uploads/2025/01/Screenshot-2025-01-26-152210.png" alt="Track 3">
+            <div class="carousel-text">
+                <h3>The Sound of CACHAPLA #002</h3>
+                <p>CACHAPLA</p>
+            </div>     
+        </a>
+    </div>
+    <button class="nav-arrow right" onclick="nextSlide()">
+        <svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="invisible_box" data-name="invisible box">
+              <rect width="48" height="48" fill="none"/>
+            </g>
+            <g id="icons_Q2" data-name="icons Q2">
+              <path d="M18.4,13.4,30,25l-11.6,11.6a1.9,1.9,0,0,0-.2,3,2.1,2.1,0,0,0,2.7-.2l12-11.9a1.9,1.9,0,0,0,0-2.8L20.9,10.6a2.1,2.1,0,0,0-2.7-.2,1.9,1.9,0,0,0-.2,3Z" fill="black"/>
+            </g>
+          </g>
+        </svg>
+    </button>
+</div>
+
+<style>
+    .carousel-container {
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        align-items:center;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        align-items:center;
+    }
+
+    .carousel-item {
+        min-width: 50%; /* Show two items per slide */
+        display: flex;
+        align-items: top;
+        gap: 20px;
+        padding: 0px;
+        text-decoration:none !important;
+    }
+
+    .carousel-item img {
+        width: 125px;
+        height: 135PX;
+        flex-shrink: 0;
+    }
+
+    .carousel-text {
+        text-align: left;
+        font-family:afacad;
+    }
+
+    .carousel-text h3 {
+        margin: 0px 0 45px;
+        font-size: 22px;
+    }
+
+    .carousel-text p {
+        color: grey;
+    }
+
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    outline: none; /* Remove the default focus outline */
+}
+
+.nav-arrow:focus {
+    background: none !important; /* Ensure no background color on focus */
+    outline: none !important; /* Remove the outline on focus */
+}
+
+.nav-arrow:hover {
+    background: none !important;
+}
+
+.nav-arrow:active {
+    background: none !important;
+}
+
+.nav-arrow.left:hover {
+    background: none !important;
+}
+
+.nav-arrow.left:active {
+    background: none !important;
+}
+
+.nav-arrow.right:hover {
+    background: none !important;
+}
+
+.nav-arrow.right:active {
+    background: none !important;
+}
+    .nav-arrow.left {
+        left: 0px;
+    }
+
+    .nav-arrow.right {
+        right: 0px;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-item {
+            min-width: 100%; /* Show one item per slide on mobile */
+            flex-direction: column; /* Stack image and text vertically */
+            align-items: center; /* Center items */
+        }
+
+        .carousel-text {
+            text-align: center; /* Center text */
+        }
+
+        .carousel-text h3 {
+            margin: 10px 0 0; /* Adjust margin for mobile */
+        }
+    }
+</style>
+
+<script>
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    let index = 0;
+    const delay = 3000; // 3 seconds
+
+    function updateCarousel() {
+        const offset = -index * (window.innerWidth <= 768 ? 100 : 50); // Adjust to match one or two items per slide
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % (window.innerWidth <= 768 ? items.length : Math.ceil(items.length / 2)); // Update to navigate by pairs or single
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + (window.innerWidth <= 768 ? items.length : Math.ceil(items.length / 2))) % (window.innerWidth <= 768 ? items.length : Math.ceil(items.length / 2));
+        updateCarousel();
+    }
+
+    setInterval(() => {
+        nextSlide();
+    }, delay);
+</script>
