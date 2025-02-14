@@ -1,6 +1,14 @@
+<!--
+Go to https://whatamesh.vercel.app/ to customize your own gradient mesh. 
+
+For this to work, you must make a Gradient.js file somewhere in your project, the code for which is provided in the WhatAMesh website. 
+
+For those working on WordPress, go to your file manager and create Gradient.js under the js folder of your theme (I put it in the unminified for simplicity).
+  -->
+
 <canvas id="gradient-canvas"></canvas>
 <script type="module">
-    import { Gradient } from 'https://cachapla.com/wp-content/themes/astra/assets/js/unminified/Gradient.js';
+    import { Gradient } from 'https://cachapla.com/wp-content/themes/astra/assets/js/unminified/Gradient.js'; // This client's website is developed on a hosting service using WordPress 
 
     const gradient = new Gradient();
     gradient.initGradient('#gradient-canvas');
