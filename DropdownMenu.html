@@ -1,0 +1,85 @@
+<div class="hero-widget">
+    <style>
+        .hero-widget {
+            text-align: center;
+            background: transparent;
+            padding: 1rem;
+        }
+
+        .arrow {
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow:hover {
+            transform: translateY(5px);
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+        }
+
+        .nav-menu.visible {
+            opacity: 1;
+            max-height: 500px; /* Large enough to fit all menu items */
+        }
+
+        .nav-menu a {
+            text-decoration: none !important;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            transition: color 0.3s ease;
+            font-family: 'afacad';
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:hover {
+            color:;
+        }
+
+        .hero-widget:hover .nav-menu {
+            opacity: 1;
+            max-height: 500px;
+        }
+    </style>
+
+    <div id="nav-menu" class="nav-menu"> 
+        <a href="https://cachapla.com/">Home</a>
+        <a href="https://cachapla.com/about">About</a>
+        <a href="https://cachapla.com/dates">Dates</a>
+        <a href="https://cachapla.com/contact">Contact</a>
+        <a href="https://cachapla.com/shop">Shop</a>
+    </div>
+    <div class="arrow">
+        
+        
+       <?xml version="1.0" encoding="utf-8"?>
+<!-- License: MIT. Made by Denali Design: https://github.com/denali-design/denali-icons -->
+<svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <title>arrowhead-down</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="invisible_box" data-name="invisible box">
+      <rect width="48" height="48" fill="none"/>
+    </g>
+    <g id="icons_Q2" data-name="icons Q2">
+      <path d="M24,27.2,13.4,16.6a1.9,1.9,0,0,0-3,.2,2.1,2.1,0,0,0,.2,2.7l12,11.9a1.9,1.9,0,0,0,2.8,0l12-11.9a2.1,2.1,0,0,0,.2-2.7,1.9,1.9,0,0,0-3-.2Z" fill="white"/>
+    </g>
+  </g>
+</svg>
+
+
+    </div>
+</div>
