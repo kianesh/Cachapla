@@ -1,0 +1,107 @@
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 1"></div>
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 2"></div>
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 3"></div>
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 4"></div>
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 5"></div>
+    <div class="carousel-item"><img src="example1.jpg" alt="Image 6"></div>
+  </div>
+</div>
+
+<style>
+.carousel-container {
+  height: 70vh;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 150%;
+  transition: transform 0.5s ease-out;
+  
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 33.33%;
+  transition: all 0.5s ease-out;
+  transform-style: preserve-3d;
+
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-out;
+    border-radius: 10px;
+
+}
+
+/* Active item */
+.carousel-item:nth-child(1) {
+  transform: translateY(100%) scale(0.9);
+  opacity: 0.3;
+  z-index: 1;
+
+}
+
+.carousel-item:nth-child(2) {
+  transform: translateY(0%) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.carousel-item:nth-child(3) {
+  transform: translateY(-100%) scale(0.9);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* Hidden items */
+.carousel-item:nth-child(n+4) {
+  transform: translateY(-200%) scale(0.8);
+  opacity: 0;
+  z-index: 0;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector('.carousel');
+  let scrollPosition = 0;
+  let currentIndex = 0;
+  const scrollRate = 0.3; // Adjust scroll speed (0.1 = slow, 0.5 = fast)
+
+  function updateCarousel() {
+    const items = document.querySelectorAll('.carousel-item');
+    items.forEach((item, index) => {
+      const position = (index - currentIndex + 3) % 6;
+      item.style.transform = `translateY(${position * 100}%) scale(${1 - Math.abs(position-1)*0.1})`;
+      item.style.opacity = 1 - Math.abs(position-1)*0.7;
+      item.style.zIndex = 3 - Math.abs(position-1);
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const newScroll = window.scrollY * scrollRate;
+    const delta = newScroll - scrollPosition;
+    scrollPosition = newScroll;
+    
+    currentIndex = Math.floor(scrollPosition / 100) % 6;
+    updateCarousel();
+  });
+
+  // Initialize carousel
+  updateCarousel();
+});
+</script>
